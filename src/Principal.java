@@ -1,4 +1,6 @@
 import io.araf.screenmatch.calculos.CalculadoraDeTiempo;
+import io.araf.screenmatch.calculos.FiltroRecomendacion;
+import io.araf.screenmatch.modelos.Episodio;
 import io.araf.screenmatch.modelos.Pelicula;
 import io.araf.screenmatch.modelos.Serie;
 
@@ -44,6 +46,17 @@ public class Principal {
         calculadora.incluye(casaDragon);
         calculadora.incluye(matrix);
         System.out.println("Tiempo total de mi lista: " + calculadora.getTiempoTotal() + "min");
+
+        System.out.println(separador);
+        FiltroRecomendacion filtroRecomendacion = new FiltroRecomendacion();
+        filtroRecomendacion.filtra(miPelicula);
+
+        Episodio episodio = new Episodio();
+        episodio.setNumero(1);
+        episodio.setNombre("Los herederos del dragon");
+        episodio.setSerie(casaDragon);
+        episodio.setTotalVisualizaciones(50);
+        filtroRecomendacion.filtra(episodio);
 
     }
 }
