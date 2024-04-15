@@ -52,8 +52,7 @@ public class Titulo {
         String fichaTecnica = """
                 Titulo: %s
                 Fecha de lanzamiento: %d
-                Duración: %dmin
-                """.formatted(nombre, fechaDeLanzamiento, getDuracionEnMinutos());
+                Duración: %dmin""".formatted(nombre, fechaDeLanzamiento, getDuracionEnMinutos());
         System.out.println(fichaTecnica);
     }
 

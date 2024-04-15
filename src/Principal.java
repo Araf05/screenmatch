@@ -1,3 +1,4 @@
+import io.araf.screenmatch.calculos.CalculadoraDeTiempo;
 import io.araf.screenmatch.modelos.Pelicula;
 import io.araf.screenmatch.modelos.Serie;
 
@@ -16,7 +17,8 @@ public class Principal {
         System.out.println(miPelicula.getCantidadDeEvaluaciones());
         System.out.println("Evaluacion: " + miPelicula.calculaMedia());
 
-        System.out.println("***********");
+        String separador = "***********";
+        System.out.println(separador);
 
         Serie casaDragon = new Serie();
         casaDragon.setNombre("La casa del dragón");
@@ -26,6 +28,22 @@ public class Principal {
         casaDragon.setMinutosPorEpisodio(50);
 
         casaDragon.muestraFichaTecnica();
+
+        System.out.println(separador);
+
+        Pelicula matrix = new Pelicula();
+        matrix.setNombre("Matrix");
+        matrix.setFechaDeLanzamiento(1998);
+        matrix.setDuracionEnMinutos(180);
+        matrix.setIncluidoEnPlan(true);
+        matrix.muestraFichaTecnica();
+
+        System.out.println(separador);
+        CalculadoraDeTiempo calculadora = new CalculadoraDeTiempo();
+        calculadora.incluye(miPelicula);
+        calculadora.incluye(casaDragon);
+        calculadora.incluye(matrix);
+        System.out.println("Tiempo total de mi lista: " + calculadora.getTiempoTotal() + "min");
 
     }
 }
