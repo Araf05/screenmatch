@@ -50,10 +50,10 @@ public class Titulo {
 
     public void muestraFichaTecnica() {
         String fichaTecnica = """
-                Película: %s
+                Titulo: %s
                 Fecha de lanzamiento: %d
                 Duración: %dmin
-                """.formatted(nombre, fechaDeLanzamiento, duracionEnMinutos);
+                """.formatted(nombre, fechaDeLanzamiento, getDuracionEnMinutos());
         System.out.println(fichaTecnica);
     }
 
