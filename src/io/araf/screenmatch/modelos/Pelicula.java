@@ -1,6 +1,8 @@
 package io.araf.screenmatch.modelos;
 
-public class Pelicula extends Titulo {
+import io.araf.screenmatch.calculos.Clasificable;
+
+public class Pelicula extends Titulo implements Clasificable {
     private String director;
 
     public String getDirector() {
@@ -9,5 +11,10 @@ public class Pelicula extends Titulo {
 
     public void setDirector(String director) {
         this.director = director;
+    }
+
+    @Override
+    public int getClasificación() {
+        return (int) (calculaMedia() / 2);
     }
 }
