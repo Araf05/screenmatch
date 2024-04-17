@@ -4,6 +4,8 @@ import io.araf.screenmatch.modelos.Episodio;
 import io.araf.screenmatch.modelos.Pelicula;
 import io.araf.screenmatch.modelos.Serie;
 
+import java.util.ArrayList;
+
 public class Principal {
     public static void main(String[] args) {
         Pelicula miPelicula = new Pelicula();
@@ -57,6 +59,18 @@ public class Principal {
         episodio.setSerie(casaDragon);
         episodio.setTotalVisualizaciones(50);
         filtroRecomendacion.filtra(episodio);
+
+        var peliculaDeAra = new Pelicula();
+        peliculaDeAra.setNombre("El señor de los anillos");
+        peliculaDeAra.setDuracionEnMinutos(180);
+        peliculaDeAra.setFechaDeLanzamiento(2001);
+
+        ArrayList<Pelicula> listaDePeliculas = new ArrayList<>();
+        listaDePeliculas.add(peliculaDeAra);
+        listaDePeliculas.add(matrix);
+        listaDePeliculas.add(miPelicula);
+        System.out.println("Tamaño de mi array: " + listaDePeliculas.size());
+        System.out.println("La primera pelicula es: " + listaDePeliculas.get(0).getNombre());
 
     }
 }
