@@ -1,3 +1,5 @@
+package io.araf.screenmatch.Principal;
+
 import io.araf.screenmatch.calculos.CalculadoraDeTiempo;
 import io.araf.screenmatch.calculos.FiltroRecomendacion;
 import io.araf.screenmatch.modelos.Episodio;
@@ -8,9 +10,8 @@ import java.util.ArrayList;
 
 public class Principal {
     public static void main(String[] args) {
-        Pelicula miPelicula = new Pelicula();
-        miPelicula.setNombre("Encanto");
-        miPelicula.setFechaDeLanzamiento(2022);
+
+        Pelicula miPelicula = new Pelicula("Encanto", 2022);
         miPelicula.setDuracionEnMinutos(160);
 
         miPelicula.evalua(7.5);
@@ -24,9 +25,7 @@ public class Principal {
         String separador = "***********";
         System.out.println(separador);
 
-        Serie casaDragon = new Serie();
-        casaDragon.setNombre("La casa del dragón");
-        casaDragon.setFechaDeLanzamiento(2022);
+        Serie casaDragon = new Serie("La casa del dragón", 2022);
         casaDragon.setTemporadas(1);
         casaDragon.setEpisodiosPorTemporada(10);
         casaDragon.setMinutosPorEpisodio(50);
@@ -35,9 +34,7 @@ public class Principal {
 
         System.out.println(separador);
 
-        Pelicula matrix = new Pelicula();
-        matrix.setNombre("Matrix");
-        matrix.setFechaDeLanzamiento(1998);
+        Pelicula matrix = new Pelicula("Matrix", 1998);
         matrix.setDuracionEnMinutos(180);
         matrix.setIncluidoEnPlan(true);
         matrix.muestraFichaTecnica();
@@ -60,10 +57,8 @@ public class Principal {
         episodio.setTotalVisualizaciones(50);
         filtroRecomendacion.filtra(episodio);
 
-        var peliculaDeAra = new Pelicula();
-        peliculaDeAra.setNombre("El señor de los anillos");
+        var peliculaDeAra = new Pelicula("El señor de los anillos", 2001);
         peliculaDeAra.setDuracionEnMinutos(180);
-        peliculaDeAra.setFechaDeLanzamiento(2001);
 
         ArrayList<Pelicula> listaDePeliculas = new ArrayList<>();
         listaDePeliculas.add(peliculaDeAra);
@@ -71,6 +66,12 @@ public class Principal {
         listaDePeliculas.add(miPelicula);
         System.out.println("Tamaño de mi array: " + listaDePeliculas.size());
         System.out.println("La primera pelicula es: " + listaDePeliculas.get(0).getNombre());
+
+        System.out.println(listaDePeliculas);
+
+        System.out.println(separador);
+
+        System.out.println(listaDePeliculas.get(0).toString());
 
     }
 }
