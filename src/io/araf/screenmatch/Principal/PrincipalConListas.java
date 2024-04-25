@@ -2,8 +2,11 @@ package io.araf.screenmatch.Principal;
 
 import io.araf.screenmatch.modelos.Pelicula;
 import io.araf.screenmatch.modelos.Serie;
+import io.araf.screenmatch.modelos.Titulo;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 public class PrincipalConListas {
     public static void main(String[] args) {
@@ -14,11 +17,34 @@ public class PrincipalConListas {
 
         Serie casaDragon = new Serie("La casa del dragón", 2022);
 
-        ArrayList<Pelicula> listaDePeliculas = new ArrayList<>();
-        listaDePeliculas.add(peliculaDeAra);
-        listaDePeliculas.add(matrix);
-        listaDePeliculas.add(miPelicula);
-        System.out.println("Tamaño de mi array: " + listaDePeliculas.size());
-        System.out.println("La primera pelicula es: " + listaDePeliculas.get(0).getNombre());
+        ArrayList<Titulo> lista = new ArrayList<>();
+        lista.add(peliculaDeAra);
+        peliculaDeAra.evalua(10);
+        lista.add(matrix);
+        matrix.evalua(6);
+        lista.add(miPelicula);
+        miPelicula.evalua(4);
+        lista.add(casaDragon);
+
+        for(Titulo item: lista) {
+            System.out.println(item.getNombre());
+            if (item instanceof Pelicula pelicula && pelicula.getClasificacion() > 2) {
+                System.out.println("Puntuacion: " + pelicula.getClasificacion() );
+            }
+        }
+
+        /*
+        lista.forEach(System.out::println);*/
+
+        ArrayList<String> listaDeArtistas = new ArrayList<>();
+        listaDeArtistas.add("Penelope Cruz");
+        listaDeArtistas.add("Antonio Banderas");
+        listaDeArtistas.add("Ricardo Darin");
+
+        Collections.sort(listaDeArtistas);
+        System.out.println("Lista de artistas ordenada: " + listaDeArtistas);
+
+        Collections.sort(lista);
+        System.out.println("Lista de titulos ordenada: " + lista);
     }
 }
