@@ -4,9 +4,7 @@ import io.araf.screenmatch.modelos.Pelicula;
 import io.araf.screenmatch.modelos.Serie;
 import io.araf.screenmatch.modelos.Titulo;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
+import java.util.*;
 
 public class PrincipalConListas {
     public static void main(String[] args) {
@@ -36,7 +34,7 @@ public class PrincipalConListas {
         /*
         lista.forEach(System.out::println);*/
 
-        ArrayList<String> listaDeArtistas = new ArrayList<>();
+        List<String> listaDeArtistas = new LinkedList<>(); /* Utilizar una interfaz como List, instanciando una Lista enlazada, un arrayList, o lo que necesitemos*/
         listaDeArtistas.add("Penelope Cruz");
         listaDeArtistas.add("Antonio Banderas");
         listaDeArtistas.add("Ricardo Darin");
@@ -46,5 +44,15 @@ public class PrincipalConListas {
 
         Collections.sort(lista);
         System.out.println("Lista de titulos ordenada: " + lista);
+
+        lista.sort(Comparator.comparing(Titulo::getFechaDeLanzamiento));
+        /*
+        sort pertenece a ArrayList
+        Comparator es una interfaz, estamos llamando directamente a la interfaz
+        comparing es un metodo estatico
+        Y le pasamos como parametro la fecha de lanzamiento de cada titulo para que los compare
+         */
+
+        System.out.println("Lista ordenada por fecha: " + lista);
     }
 }
