@@ -1,0 +1,3 @@
+Nombre: Shrek
+Lanzamiento: 2001
+Duración en minutos: 90min
