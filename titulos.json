@@ -1,0 +1,18 @@
+[
+  {
+    "Nombre": "Shrek",
+    "FechaDeLanzamiento": 2001,
+    "DuracionEnMinutos": 90,
+    "IncluidoEnPlan": false,
+    "SumaDeLasEvaluaciones": 0.0,
+    "CantidadDeEvaluaciones": 0
+  },
+  {
+    "Nombre": "Madagascar",
+    "FechaDeLanzamiento": 2005,
+    "DuracionEnMinutos": 86,
+    "IncluidoEnPlan": false,
+    "SumaDeLasEvaluaciones": 0.0,
+    "CantidadDeEvaluaciones": 0
+  }
+]
